@@ -528,3 +528,26 @@ const mountainsArray = [
         }
     }
 ]
+document.addEventListener('DOMContentLoaded', function() {
+    var submitButton = document.getElementById("submountain");
+    submitButton.addEventListener("click", displayMountain);
+        let i = 0;
+
+        while (i < mountainsArray.length) {
+            var select = document.getElementById("mountains");
+            var option = document.createElement('option');
+            option.text = mountainsArray[i]["name"];
+            option.value = i
+            select.add(option, i);
+            i++;
+    }
+});
+
+    function displayMountain(e) {
+        var selected = document.getElementById("mountains").value;
+        document.getElementById("name").src = `assets\images\${mountainsArray[selected]["img"]}`
+        document.getElementById("name").innerHTML = `<strong>Name:</strong> ${mountainsArray[selected]["name"]}`;
+        document.getElementById("elevation").innerHTML = `<strong>Elevation:</strong> ${mountainsArray[selected]["elevation"]} feet`;
+        document.getElementById("desc").innerHTML = `<strong>Description:</strong> ${mountainsArray[selected]["desc"]}`;
+    }
+

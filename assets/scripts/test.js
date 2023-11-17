@@ -6858,73 +6858,9 @@ const nationalParksArray = [
     }
     }
 ]
+let i = 0;
 
-document.addEventListener('DOMContentLoaded', function() {
-    var locationSearchButton = document.getElementById("locationsearch");
-    var typeSearchButton = document.getElementById("typesearch");
-    locationSearchButton.addEventListener("click", searchLocation);
-    typeSearchButton.addEventListener("click", searchType);
-    var select = document.getElementById("locations");
-    var selectType = document.getElementById("parktype");
-
-    for (var i = 0; i < nationalParksArray.length; i++){
-        var state = nationalParksArray[i]["State"];
-        var exists = false;
-
-        for (var j = 0; j < select.options.length; j++) {
-            if (select.options[j].value === state) {
-                exists = true;
-                break;
-            }
-        }
-
-        if (!exists) {
-            var option = document.createElement('option');
-            option.text = option.value = state;
-            select.add(option);
-        }
-    }
-
-    for (var i = 0; i < nationalParksArray.length; i++){
-        var type = nationalParksArray[i]["LocationName"].split(" National ")[1];
-        if(typeof type == "undefined"){
-            continue
-        }
-        var exists = false;
-
-        for (var j = 0; j < selectType.options.length; j++) {
-            if (selectType.options[j].value === type) {
-                exists = true;
-                break;
-            }
-        }
-
-        if (!exists) {
-            var option = document.createElement('option');
-            option.text = option.value = type;
-            selectType.add(option);
-        }
-    }
-});
-
-function searchLocation(e) {
-    var selected = document.getElementById("locations").value;
-    resultString = ""
-    for (var i = 0; i < nationalParksArray.length; i++){
-        if(nationalParksArray[i]["State"] == selected){
-            resultString += `<strong>${nationalParksArray[i]["LocationName"]}</strong> (${nationalParksArray[i]["City"]})<br>`
-        }
-    }
-    document.getElementById("results").innerHTML = resultString
-}
-
-function searchType(e) {
-    var selected = document.getElementById("parktype").value;
-    resultString = ""
-    for (var i = 0; i < nationalParksArray.length; i++){
-        if(nationalParksArray[i]["LocationName"].split(" National ")[1] == selected){
-            resultString += `<strong>${nationalParksArray[i]["LocationName"]}</strong> (${nationalParksArray[i]["City"]}, ${nationalParksArray[i]["State"]})<br>`
-        }
-    }
-    document.getElementById("resultsType").innerHTML = resultString
+while (i < nationalParksArray.length) {
+    console.log(nationalParksArray[i]);
+    i++;
 }

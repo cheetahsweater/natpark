@@ -17,6 +17,10 @@ div p {
     padding-right: 4%;
 }
 
+div img {
+    border-radius: 5%;
+}
+
 h1 {
     font-family: 'Phudu', sans-serif;
 }
@@ -29,7 +33,16 @@ input::placeholder {
     font-family: 'REM', sans-serif;
 }
 
+option {
+    font-family: 'REM', sans-serif;
+}
+
+
 p {
+    font-family: 'REM', sans-serif;
+}
+
+select {
     font-family: 'REM', sans-serif;
 }
 
@@ -65,6 +78,22 @@ p {
     width: 50em;
     margin: auto;
     margin-top: 10em;
+    padding-top: 2%;
+    padding-bottom: 5%;
+    /*Quick guide to box-shadow:
+    First two numbers are vertical and horizontal offset.
+    Third number is how far to spread the fuzzy effect.
+    Fourth number is how much solid border/shadow there should be before the fuzzy effect begins.
+    */
+    box-shadow: 0px 0px 15px 2px #42c6ff;
+}
+
+.mountain {
+    margin: 0 auto;
+    background: rgb(10, 10, 10, 0.9);
+    border-radius: 20px;
+    width: 70%;
+    margin-top: 1em;
     padding-top: 2%;
     padding-bottom: 5%;
     /*Quick guide to box-shadow:

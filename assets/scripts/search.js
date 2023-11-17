@@ -2,13 +2,16 @@ const searchButton = document.getElementById('search');
 let searchQuery = "";
 
 function getSearch(e){
-    const parent = e.target.closest("label");
+    e.preventDefault();
+
+    const parent = e.target.closest("form");
     const input = parent.querySelector("input");
     const inputValue = input.value;
     if(inputValue !== ""){
         searchQuery = inputValue;
     }
-    document.getElementById('searched').innerHTML = `<strong>${searchQuery}</strong>`;
+    document.getElementById('searched').innerHTML = `<strong>${searchQuery} ${nationalParksArray.length}</strong>`;
+
 }
 
 searchButton.addEventListener("click", getSearch);

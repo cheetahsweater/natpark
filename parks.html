@@ -8,18 +8,31 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Phudu:wght@500;600;700&family=REM:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" type="text/css">
+    <script src="assets/scripts/nationalParkData.js"></script>
 </head>
 <body>
     <h1 class="title">Lain Taylor</h1>
     <h1 class="subtitle">Nature Guide</h1>
+    <div class="center">
+        <p> <a href="./index.html">Home</a> | <a href="./mountains.html">Mountains</a> | <a href="./parks.html">National Parks</a></p>
+    </div>
     <div class="house"></div>
     <h1>Nature Park Search</h1>
-    <label>
-        <input type="text" placeholder="Search parks...">
-        <button id="search">Search</button>
-        <p>You searched for:</p>
-        <p id="searched"><strong>Search</strong></p>
-    </label>
-    <script src="assets/scripts/search.js"></script> 
+    <select id="locations">
+        <option value="null">Select location...</option>
+    </select>
+    <button id="locationsearch">Submit</button>
+    <div class="mountain" id="resultlist">
+        <p id="results">Choose a location!</p>
+    </div>
+    <br>
+    <br>
+    <select id="parktype">
+        <option value="null">Select park type...</option>
+    </select>
+    <button id="typesearch">Submit</button>
+    <div class="mountain" id="resultlistType">
+        <p id="resultsType">Choose a type!</p>
+    </div>
 </body>
 </html>
