@@ -6865,7 +6865,6 @@ document.addEventListener('DOMContentLoaded', function() {
     locationSearchButton.addEventListener("click", searchLocation);
     typeSearchButton.addEventListener("click", searchType);
     var select = document.getElementById("locations");
-    var selectType = document.getElementById("parktype");
 
     for (var i = 0; i < nationalParksArray.length; i++){
         var state = nationalParksArray[i]["State"];
@@ -6884,9 +6883,22 @@ document.addEventListener('DOMContentLoaded', function() {
             select.add(option);
         }
     }
+});
 
+function searchLocation(e) {
+    var selected = document.getElementById("locations").value;
+    resultString = ""
     for (var i = 0; i < nationalParksArray.length; i++){
-        var type = nationalParksArray[i]["LocationName"].split(" National ")[1];
+        if(nationalParksArray[i]["State"] == selected){
+            resultString += `<strong>${nationalParksArray[i]["LocationName"]}</strong> (${nationalParksArray[i]["City"]})<br>`
+        }
+    }
+    document.getElementById("results").innerHTML = resultString
+    var selectType = document.getElementById("parktype");
+    var narrowedArray = nationalParksArray.filter((park) => park["State"] == selected)
+
+    for (var i = 0; i < narrowedArray.length; i++){
+        var type = narrowedArray[i]["LocationName"].split(" National ")[1];
         if(typeof type == "undefined"){
             continue
         }
@@ -6905,25 +6917,16 @@ document.addEventListener('DOMContentLoaded', function() {
             selectType.add(option);
         }
     }
-});
-
-function searchLocation(e) {
-    var selected = document.getElementById("locations").value;
-    resultString = ""
-    for (var i = 0; i < nationalParksArray.length; i++){
-        if(nationalParksArray[i]["State"] == selected){
-            resultString += `<strong>${nationalParksArray[i]["LocationName"]}</strong> (${nationalParksArray[i]["City"]})<br>`
-        }
-    }
-    document.getElementById("results").innerHTML = resultString
 }
 
 function searchType(e) {
+    var selectedState = document.getElementById("locations").value;
+    var narrowedArray = nationalParksArray.filter((park) => park["State"] == selectedState)
     var selected = document.getElementById("parktype").value;
     resultString = ""
-    for (var i = 0; i < nationalParksArray.length; i++){
-        if(nationalParksArray[i]["LocationName"].split(" National ")[1] == selected){
-            resultString += `<strong>${nationalParksArray[i]["LocationName"]}</strong> (${nationalParksArray[i]["City"]}, ${nationalParksArray[i]["State"]})<br>`
+    for (var i = 0; i < narrowedArray.length; i++){
+        if(narrowedArray[i]["LocationName"].split(" National ")[1] == selected){
+            resultString += `<strong>${narrowedArray[i]["LocationName"]}</strong> (${narrowedArray[i]["City"]}, ${narrowedArray[i]["State"]})<br>`
         }
     }
     document.getElementById("resultsType").innerHTML = resultString
