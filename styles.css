@@ -10,6 +10,10 @@ h1 {
     font-family: 'Phudu', sans-serif;
 }
 
+.house {
+    background: url("assets/elements/housediv.gif");
+}
+
 input {
     font-family: 'REM', sans-serif;
 }
