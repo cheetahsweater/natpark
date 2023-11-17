@@ -1,53 +1,81 @@
 body {
     background-color: antiquewhite;
 }
+
+button {
+    font-family: 'REM', sans-serif;
+}
+
+h1 {
+    font-family: 'Phudu', sans-serif;
+}
+
+input {
+    font-family: 'REM', sans-serif;
+}
+
+input::placeholder {
+    font-family: 'REM', sans-serif;
+}
+
 p {
     font-family: 'REM', sans-serif;
 }
+
 .blurb {
     width: 5em;
     margin-top: 10em;
 }
+
 .center {
     margin: auto;
 }
+
 .intro {
     width: 50em;
     margin: auto;
     margin-top: 10em;
 }
+
 .profile {
     height: 15em;
     float: left;
     margin-right: 1em;
 }
+
 .set {
     width: 100%;
 }
+
 .subtitle {
     text-align: center;
-    font-family: 'Phudu';
+    font-family: 'Phudu', sans-serif;
     margin: auto;
 }
+
 .title {
     font-family: 'Phudu', sans-serif;
     font-size: 5em;
     text-align: center;
     margin: auto;
 }
+
 #emma {
     width: 35%;
     float: right;
     margin-bottom: 1em;
 }
+
 #kurt {
     width: 35%;
     float: right;
 }
+
 #lain {
     width: 35%;
     float: left;
 }
+
 #sam {
     width: 35%;
     float: left;
