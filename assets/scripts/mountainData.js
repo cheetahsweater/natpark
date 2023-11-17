@@ -545,7 +545,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function displayMountain(e) {
         var selected = document.getElementById("mountains").value;
-        document.getElementById("name").src = `assets\images\${mountainsArray[selected]["img"]}`
+        document.getElementById("mountimg").src = `assets/images/${mountainsArray[selected]["img"]}`
         document.getElementById("name").innerHTML = `<strong>Name:</strong> ${mountainsArray[selected]["name"]}`;
         document.getElementById("elevation").innerHTML = `<strong>Elevation:</strong> ${mountainsArray[selected]["elevation"]} feet`;
         document.getElementById("desc").innerHTML = `<strong>Description:</strong> ${mountainsArray[selected]["desc"]}`;
